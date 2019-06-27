@@ -13,3 +13,14 @@ if reversed_word == enter_word:
 else:
     print("NOT")
 
+#breaking down steps of palindrome
+#Take user input
+#print out individual letters in order
+#for  index in range(0,len(word)):
+#   print(word[index])
+#print out individual letters in reverse order
+#for index in range(len(word)-1, -1, -1):
+#append letters to form a reverse string
+#   reversed_word = reversed_word + word[index]
+#
+#compare reverse word with original word for palindrome

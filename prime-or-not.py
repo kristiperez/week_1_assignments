@@ -9,5 +9,3 @@ for index in range(2, number_input):
         break
     
 print(isPrime)
-
-
