@@ -1,17 +1,8 @@
 
+from shopping_list import ShoppingList
+from grocery_item import GroceryItem
+
 shopping_lists = []
-
-class ShoppingList:
-    def __init__(self, title, address):
-        self.title = title
-        self.address = address
-        self.items = []   
-
-class GroceryItem:
-    def __init__(self, title, price, quantity):
-        self.title = title
-        self.price = price
-        self.quantity = quantity
 
 user_input = ""
 
