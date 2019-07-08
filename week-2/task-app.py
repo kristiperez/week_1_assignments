@@ -34,7 +34,7 @@ while user_input != "q":
 
         delted_input = int(input("Enter the number of the task you want to delete: "))
 
-        def delete_task():
+        def delete_task():f
             del tasks[delted_input - 1]
         
         delete_task()

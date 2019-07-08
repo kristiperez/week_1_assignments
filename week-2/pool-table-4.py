@@ -1,5 +1,6 @@
 
 
+import json
 file_name = "06-05-2019.json"
 number_of_tables = 12
 tables = []
@@ -15,36 +16,20 @@ class PoolTable:
         self.total_time = 0.0
         self.occupied = "NOT OCCUPIED"
 
-#def create_tables():
-#    for index in range(number_of_tables):
-#        table_number = index + 1
-#        p = PoolTable(table_number)
-#        tables.append(p)        
-    
-    @staticmethod
-    def create_tables():
-        for index in range(number_of_tables):
-            table_number = index + 1
-            p = PoolTable(table_number)
-            tables.append(p)
-
-PoolTable.create_tables()
-
-
-#def menu():
-#    return input("1) Open a table \n2) View all tables\n3) Close a table\n")
-#user_input = menu()
-
-#def menu():
-#    user_input = input("1) View all tables \n2) Open a table \n3) Close a table\n4) Quit\n")
-#    return user_input   
-#user input = what is returned from the calling the menu
-#user_input = menu()
-
 def menu():
     print("1) View all tables \n2) Open a table \n3) Close a table\n4) Quit\n")
 
 menu()
+
+def create_tables():
+    for index in range(number_of_tables):
+        table_number = index + 1
+        p = PoolTable(table_number)
+        tables.append(p)
+    return p       
+    
+create_tables()
+
 
 while user_input != "4":
     user_input = input("Enter your selection: ")
@@ -71,6 +56,9 @@ while user_input != "4":
         tables[table_number].end = datetime.datetime.now().replace(microsecond=0)
         tables[table_number].occupied = "NOT OCCUPIED"
         tables[table_number].total_time = tables[table_number].end - tables[table_number].start
+
+        with open(file_name,"w") as file_object:
+            json.dump(p.__dict__,file_object)
         
         for item in tables:
             print(f"{item.number} - {item.start} - {item.end} - {item.total_time} - {item.occupied}")
